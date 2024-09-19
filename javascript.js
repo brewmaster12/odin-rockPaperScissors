@@ -27,4 +27,5 @@ function getHumanChoice() {
 
 }
 
-console.log(getHumanChoice())
+let humanSCorse = 0;
+let computerScore = 0;
