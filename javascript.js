@@ -14,7 +14,11 @@ function getComputerChoice() {
 function getHumanChoice() {
     let humanChoice = prompt("Enter rock, paper or scissors")
 
-    if (humanChoice === "rock" || "paper" || "scissors") {
+    if (humanChoice === "rock") {
+        return humanChoice;
+    } else if (humanChoice === "paper") {
+        return humanChoice;
+    } else if (humanChoice === "scissors") {
         return humanChoice;
     } else {
         return "Invalid. Pleaser enter rock, paper or scissors";
