@@ -15,15 +15,17 @@ function getHumanChoice() {
     let humanChoice = prompt("Enter rock, paper or scissors")
 
     if (humanChoice === "rock") {
-        return humanChoice;
+        return `You chose ${humanChoice}`;
     } else if (humanChoice === "paper") {
-        return humanChoice;
+        return `You chose ${humanChoice}`;
     } else if (humanChoice === "scissors") {
-        return humanChoice;
+        return `You chose ${humanChoice}`;
     } else {
         return "Invalid. Pleaser enter rock, paper or scissors";
     }
 }
+
+console.log(getHumanChoice())
 
 let humanScore = 0;
 let computerScore = 0;
