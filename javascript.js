@@ -23,9 +23,7 @@ function getHumanChoice() {
     } else {
         return "Invalid. Pleaser enter rock, paper or scissors";
     }
-
-
 }
 
-let humanSCorse = 0;
+let humanScore = 0;
 let computerScore = 0;
