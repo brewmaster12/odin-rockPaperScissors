@@ -2,10 +2,10 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function playGame(round) {
+function playGame() {
 
     function getHumanChoice() {
-        let humanChoice = prompt("Enter rock paper or scissors").toLowerCase();
+        let humanChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
 
         if (humanChoice === "rock") {
             return humanChoice;
@@ -34,20 +34,16 @@ function playGame(round) {
 
     function playRound(x, y) {
 
-        if (x === "rock" && y === "rock") {
+        if (x === y) {
              roundResult = "draw"
         } else if (x === "rock" && y === "paper") {
              roundResult = "lose"
         } else if (x === "rock" && y === "scissors") {
              roundResult = "win"
-        } else if (x === "paper" && y === "paper") {
-             roundResult = "draw"
         } else if (x === "paper" && y === "scissors") {
              roundResult = "lose"
         } else if (x === "paper" && y === "rock") {
              roundResult = "win"
-        } else if (x === "scissors" && y === "scissors") {
-             roundResult = "draw"
         } else if (x === "scissors" && y === "rock") {
              roundResult = "lose"
         } else if (x === "scissors" && y === "paper") {
@@ -68,7 +64,15 @@ function playGame(round) {
 
     console.log(`Human: ${humanScore} Computer: ${computerScore}`)
 
-    if (round < 5) playGame(round + 1);
+    while (humanScore < 5 && computerScore < 5) {
+        playGame();
+    }
 }
 
-playGame(1);
+playGame();
+
+if (humanScore === 5) {
+    console.log("YOU WIN!\n\nRefresh the page the play again");
+} else if (computerScore === 5) {
+    console.log("YOU LOSE!\n\nRefresh the page the play again");
+}
