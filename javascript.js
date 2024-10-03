@@ -3,6 +3,18 @@ let humanScore = 0;
 let computerScore = 0;
 let roundResult;
 
+
+const container = document.querySelector("#container");
+
+
+
+const winAnnounce = document.createElement("div");
+winAnnounce.textContent = "YOU WIN!\n\nRefresh the page the play again";
+
+const loseAnnounce = document.createElement("div");
+loseAnnounce.textContent = "YOU LOSE!\n\nRefresh the page the play again";
+
+
 function getComputerChoice() {
         let computerChoice = Math.floor(Math.random() * 3)
 
@@ -32,7 +44,6 @@ function playRound(x, y) {
     } else if (x === "scissors" && y === "paper") {
         roundResult = "win"
     }
-
     
     if (roundResult == "win") {
         humanScore++;
@@ -40,13 +51,20 @@ function playRound(x, y) {
         computerScore++;
     }
 
-    console.log(`You chose ${x}\nComputer chose ${y}\nYou ${roundResult}`)
-    console.log(`Human: ${humanScore} Computer: ${computerScore}`)
+    const roundAnnounce = document.createElement("div");
+    roundAnnounce.textContent = `You chose ${x}\nComputer chose ${y}\nYou ${roundResult}\n\nHuman: ${humanScore} Computer: ${computerScore}`
+    container.appendChild(roundAnnounce);
+    
+
+    // console.log(`You chose ${x}\nComputer chose ${y}\nYou ${roundResult}`)
+    // console.log(`Human: ${humanScore} Computer: ${computerScore}`)
 
     if (humanScore === 5) {
-        console.log("YOU WIN!\n\nRefresh the page the play again");
+        container.appendChild(winAnnounce);
+
     } else if (computerScore === 5) {
-        console.log("YOU LOSE!\n\nRefresh the page the play again");
+        container.appendChild(loseAnnounce);
+
     }
 }
 
