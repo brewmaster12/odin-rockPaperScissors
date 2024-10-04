@@ -3,9 +3,7 @@ let humanScore = 0;
 let computerScore = 0;
 let roundResult;
 
-
 const container = document.querySelector("#container");
-
 
 
 const winAnnounce = document.createElement("div");
@@ -55,9 +53,6 @@ function playRound(x, y) {
     roundAnnounce.textContent = `You chose ${x}\nComputer chose ${y}\nYou ${roundResult}\n\nHuman: ${humanScore} Computer: ${computerScore}`
     container.appendChild(roundAnnounce);
     
-
-    // console.log(`You chose ${x}\nComputer chose ${y}\nYou ${roundResult}`)
-    // console.log(`Human: ${humanScore} Computer: ${computerScore}`)
 
     if (humanScore === 5) {
         container.appendChild(winAnnounce);
